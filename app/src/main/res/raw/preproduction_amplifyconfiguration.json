@@ -1,0 +1,83 @@
+{
+    "UserAgent": "aws-amplify-cli/2.0",
+    "Version": "1.0",
+    "api": {
+        "plugins": {
+            "awsAPIPlugin": {
+                "vortexamplifygate": {
+                    "endpointType": "GraphQL",
+                    "endpoint": "https://gbcvajwhsbg3zp6d6e4nzvakom.appsync-api.us-west-2.amazonaws.com/graphql",
+                    "region": "us-west-2",
+                    "authorizationType": "AMAZON_COGNITO_USER_POOLS"
+                }
+            }
+        }
+    },
+    "auth": {
+        "plugins": {
+            "awsCognitoAuthPlugin": {
+                "UserAgent": "aws-amplify/cli",
+                "Version": "0.1.0",
+                "IdentityManager": {
+                    "Default": {}
+                },
+                "CognitoUserPool": {
+                    "Default": {
+                        "PoolId": "us-west-2_M2DjpL6eS",
+                        "AppClientId": "32u33e9bl8ir26koneov1sj7it",
+                        "Region": "us-west-2"
+                    }
+                },
+                "Auth": {
+                    "Default": {
+                        "OAuth": {
+                            "WebDomain": "stagedevsignup.auth.us-west-2.amazoncognito.com",
+                            "AppClientId": "32u33e9bl8ir26koneov1sj7it",
+                            "SignInRedirectURI": "vortex://",
+                            "SignOutRedirectURI": "androidvortex://",
+                            "Scopes": [
+                                "aws.cognito.signin.user.admin",
+                                "email",
+                                "openid",
+                                "profile"
+                            ]
+                        },
+                        "authenticationFlowType": "CUSTOM_AUTH",
+                        "socialProviders": [],
+                        "usernameAttributes": [
+                            "EMAIL"
+                        ],
+                        "signupAttributes": [],
+                        "passwordProtectionSettings": {
+                            "passwordPolicyMinLength": 8,
+                            "passwordPolicyCharacters": [
+                                "REQUIRES_LOWERCASE",
+                                "REQUIRES_UPPERCASE",
+                                "REQUIRES_NUMBERS"
+                            ]
+                        },
+                        "mfaConfiguration": "OFF",
+                        "mfaTypes": [],
+                        "verificationMechanisms": [
+                            "EMAIL"
+                        ]
+                    }
+                },
+                "AppSync": {
+                    "Default": {
+                        "ApiUrl": "https://gbcvajwhsbg3zp6d6e4nzvakom.appsync-api.us-west-2.amazonaws.com/graphql",
+                        "Region": "us-west-2",
+                        "AuthMode": "AMAZON_COGNITO_USER_POOLS",
+                        "ClientDatabasePrefix": "vortexamplifygate_AMAZON_COGNITO_USER_POOLS"
+                    },
+                    "vortexamplifygate_API_KEY": {
+                        "ApiUrl": "https://gbcvajwhsbg3zp6d6e4nzvakom.appsync-api.us-west-2.amazonaws.com/graphql",
+                        "Region": "us-west-2",
+                        "AuthMode": "API_KEY",
+                        "ClientDatabasePrefix": "vortexamplifygate_API_KEY"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Login_EditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColor">@color/text01</item>
+        <item name="android:textColorHint">@color/text06</item>
+    </style>
+
+    <style name="Login_EditTextButton">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+</resources>

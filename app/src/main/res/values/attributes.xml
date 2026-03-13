@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TimelineSurfaceView">
+        <attr name="simplify" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="StandardControlTitle">
+        <attr name="title_text" format="string" />
+        <attr name="collapsed" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ButtonOrientation">
+        <attr name="orientation_text" format="string" />
+        <attr name="orientation_icon" format="reference" />
+    </declare-styleable>
+</resources>

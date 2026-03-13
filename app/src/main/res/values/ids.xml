@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="deviceTab" type="id" />
+    <item name="systemTab" type="id" />
+    <item name="accessTab" type="id" />
+    <item name="sensorTab" type="id" />
+    <item name="devices" type="id" />
+    <item name="addDevices" type="id" />
+    <item name="nvrManagement" type="id" />
+    <item name="bridgeManagement" type="id" />
+    <item name="vssManagement" type="id" />
+
+    <item name="view_navigation" type="id" />
+    <item name="profile_list_navigation" type="id" />
+    <item name="message_navigation" type="id" />
+    <item name="archive_navigation" type="id" />
+    <item name="floor_plan_navigation" type="id" />
+    <item name="search_light_navigation" type="id" />
+    <item name="more_navigation" type="id" />
+    <item name="customized_view_navigation" type="id" />
+    <item name="ai_hub_navigation" type="id" />
+    <item name="think_search_navigation" type="id" />
+    <item name="deep_search_navigation" type="id" />
+    <item name="event_insight_navigation" type="id" />
+
+    <item name="html_text" type="id" />
+</resources>

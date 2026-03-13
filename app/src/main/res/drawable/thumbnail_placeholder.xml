@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/illustration_snapshot_dark"
+    android:insetLeft="16dp"
+    android:insetTop="6dp"
+    android:insetRight="16dp"
+    android:insetBottom="6dp" />

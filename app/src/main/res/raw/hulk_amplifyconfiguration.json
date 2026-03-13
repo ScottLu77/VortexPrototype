@@ -1,0 +1,83 @@
+{
+    "UserAgent": "aws-amplify-cli/2.0",
+    "Version": "1.0",
+    "api": {
+        "plugins": {
+            "awsAPIPlugin": {
+                "vortexamplifygate": {
+                    "endpointType": "GraphQL",
+                    "endpoint": "https://kl6mu7rldzfgxk2qcxvxol4nge.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+                    "region": "ap-northeast-1",
+                    "authorizationType": "AMAZON_COGNITO_USER_POOLS"
+                }
+            }
+        }
+    },
+    "auth": {
+        "plugins": {
+            "awsCognitoAuthPlugin": {
+                "UserAgent": "aws-amplify-cli/0.1.0",
+                "Version": "0.1.0",
+                "IdentityManager": {
+                    "Default": {}
+                },
+                "AppSync": {
+                    "Default": {
+                        "ApiUrl": "https://kl6mu7rldzfgxk2qcxvxol4nge.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+                        "Region": "ap-northeast-1",
+                        "AuthMode": "AMAZON_COGNITO_USER_POOLS",
+                        "ClientDatabasePrefix": "vortexamplifygate_AMAZON_COGNITO_USER_POOLS"
+                    },
+                    "vortexamplifygate_API_KEY": {
+                        "ApiUrl": "https://kl6mu7rldzfgxk2qcxvxol4nge.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+                        "Region": "ap-northeast-1",
+                        "AuthMode": "API_KEY",
+                        "ClientDatabasePrefix": "vortexamplifygate_API_KEY"
+                    }
+                },
+                "CognitoUserPool": {
+                    "Default": {
+                        "PoolId": "ap-northeast-1_BxG4FgrFm",
+                        "AppClientId": "3ncfua3oh3v13cjt1k3njknc0s",
+                        "Region": "ap-northeast-1"
+                    }
+                },
+                "Auth": {
+                    "Default": {
+                        "OAuth": {
+                            "WebDomain": "hulkdevsignup.auth.ap-northeast-1.amazoncognito.com",
+                            "AppClientId": "3ncfua3oh3v13cjt1k3njknc0s",
+                            "SignInRedirectURI": "vortex://",
+                            "SignOutRedirectURI": "androidvortex://",
+                            "Scopes": [
+                                "aws.cognito.signin.user.admin",
+                                "email",
+                                "openid",
+                                "profile"
+                            ]
+                        },
+                        "authenticationFlowType": "CUSTOM_AUTH",
+                        "socialProviders": [],
+                        "usernameAttributes": [
+                            "EMAIL"
+                        ],
+                        "signupAttributes": [],
+                        "passwordProtectionSettings": {
+                            "passwordPolicyMinLength": 8,
+                            "passwordPolicyCharacters": [
+                                "REQUIRES_LOWERCASE",
+                                "REQUIRES_UPPERCASE",
+                                "REQUIRES_NUMBERS"
+                            ]
+                        },
+                        "mfaConfiguration": "OFF",
+                        "mfaTypes": [],
+                        "verificationMechanisms": [
+                            "EMAIL"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

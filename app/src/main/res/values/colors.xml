@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- surface-->
+    <color name="surface02">#F0F0F0</color>
+    <color name="surface03">#FFFFFF</color>
+    <color name="surface04">#E6E6E6</color>
+    <color name="surface05">#D9D9D9</color>
+    <color name="surface06">#ADADAD</color>
+    <color name="surface10">#AEAEAE</color>
+    <color name="surface17">#EDF6FF</color>
+    <color name="surface19">#121212</color>
+    <color name="surface20">#4F4F4F</color>
+    <color name="surface22">#202020</color>
+    <color name="surface29">#FFFFFF</color>
+    <color name="surface30">#ADADAD</color>
+    <color name="surface31">#EBEBEB</color>
+    <color name="surface32">#121212</color>
+    <color name="surface33">#4F4F4F</color>
+    <color name="surface34">#FFFFFF</color>
+    <color name="surface35">#E1EDF5</color>
+    <!-- outline-->
+    <color name="outline01">#121212</color>
+    <color name="outline04">#ADADAD</color>
+    <color name="outline07">#0066FF</color>
+    <color name="outline09">#33CC00</color>
+    <color name="outline14">#D9D9D9</color>
+    <color name="outline15">#FFFFFF</color>
+    <color name="outline17">#004FD9</color>
+    <color name="outline18">#2E2E2E</color>
+    <color name="outline21">#C2C2C2</color>
+    <!-- text-->
+    <color name="text01">#121212</color>
+    <color name="text02">#202020</color>
+    <color name="text03">#2E2E2E</color>
+    <color name="text04">#3E3E3E</color>
+    <color name="text05">#4F4F4F</color>
+    <color name="text06">#ADADAD</color>
+    <color name="text07">#E6E6E6</color>
+    <color name="text09">#FFFFFF</color>
+    <color name="text14">#EBEBEB</color>
+    <color name="text17">#121212</color>
+    <color name="text20">#8F8F8F</color>
+    <color name="text21">#ADADAD</color>
+    <color name="text02_tmp">#E0E0E0</color>
+    <color name="text22">#ADADAD</color>
+    <!-- text_indicator-->
+    <color name="text_alert">#FF9900</color>
+    <color name="text_success">#33CC00</color>
+    <color name="text_primary">#0066FF</color>
+    <color name="text_primary_active">#004FD9</color>
+    <color name="text_danger">#FF3333</color>
+    <color name="text_danger_active">#CC1F25</color>
+    <!-- indicator-->
+    <color name="primary">#0066FF</color>
+    <color name="primary_tab">#D3DFF2</color>
+    <color name="primary_unfocus">#B4C6E1</color>
+    <color name="primary_active">#004FD9</color>
+    <color name="primary_hover">#2986FF</color>
+    <color name="secondary">#202020</color>
+    <color name="alert">#FF9900</color>
+    <color name="alert_bk">#FFECCC</color>
+    <color name="danger">#FF3333</color>
+    <color name="danger_active">#CC1F25</color>
+    <color name="success">#33CC00</color>
+    <!-- icon-->
+    <color name="icon01">#ADADAD</color>
+    <color name="icon02">#3E3E3E</color>
+    <color name="icon03">#202020</color>
+    <color name="icon05">#FFFFFF</color>
+    <color name="icon06">#0066FF</color>
+    <color name="icon12">#FF9900</color>
+    <color name="icon13">#33CC00</color>
+    <color name="icon14">#4F4F4F</color>
+    <color name="icon15">#121212</color>
+    <color name="icon16">#2E2E2E</color>
+    <color name="icon17">#FF3333</color>
+    <color name="icon26">#66FFFF</color>
+    <color name="icon27">#121212</color>
+    <color name="icon29">#8F8F8F</color>
+    <color name="icon30">#4F4F4F</color>
+    <color name="icon32">#FFFFFF</color>
+    <!-- except-->
+    <color name="line01">#D9D9D9</color>
+    <color name="input01">#E0E0E0</color>
+    <color name="timeline01">#FFFFFF</color>
+    <color name="timeline02">#4F4F4F</color>
+    <color name="videoexport">#FFFFFF</color>
+    <color name="hint01">#FF0000</color>
+    <color name="hint02">#202020</color>
+    <color name="hint03">#CC4FD345</color>
+    <color name="ptz_surface01">#EBEBEB</color>
+    <color name="ptz_surface02">#FFFFFF</color>
+    <color name="ptz_outline01">#E6E6E6</color>
+    <color name="ptz_icon01">#4F4F4F</color>
+    <color name="unselect">#000000</color>
+    <color name="drop_surface01">#FFFFFF</color>
+    <color name="loading01">#C2C2C2</color>
+    <color name="switch_surface01">#80B7FF</color>
+    <color name="switch_surface02">#F0F0F0</color>
+    <color name="switch_surface03">#F5F5F5</color>
+    <!-- special-->
+    <color name="vca_normal">#00CCCC</color>
+    <color name="primary_loading">#52A4FF</color>
+    <color name="professional_default">#008888</color>
+    <!-- opacity-->
+    <item name="opacity_backdrop" format="float" type="color">0.4</item>
+    <item name="opacity_cardstack" format="float" type="color">0.5</item>
+    <item name="opacity_hintbk" format="float" type="color">0.8</item>
+    <item name="opacity_tabbar_ios" format="float" type="color">0.94</item>
+    <item name="opacity_modal" format="float" type="color">0.8</item>
+    <item name="opacity_unselect" format="float" type="color">0.3</item>
+
+    <color name="Red">#FF0000</color>
+    <color name="Orange">#FF6A00</color>
+    <color name="Yellow">#FFFF00</color>
+    <color name="Green">#29CC5F</color>
+    <color name="Blue">#0055FF</color>
+    <color name="Purple">#8000FF</color>
+    <color name="Pink">#FF3399</color>
+    <color name="Gray">#B3B3B3</color>
+    <color name="Brown">#80441A</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray">#FF888888</color>
+    <color name="block_view">#99000000</color>
+    <!-- SwitchMaterial -->
+    <color name="primary_track">#610066FF</color>
+    <color name="thumb_tint_unchecked">#FFFFFF</color>
+    <color name="track_tint_unchecked">#61000000</color>
+    <color name="bars_navbar_landscape_h6">#CC202020</color>
+    <item name="light_status_bar" format="boolean" type="bool">true</item>
+    <!-- TEXT -->
+    <color name="description">#4F4F4F</color>
+    <color name="text">#3E3E3E</color>
+    <color name="subtitle2">#2E2E2E</color>
+    <color name="subtitle1">#202020</color>
+    <color name="title">#FFFFFF</color>
+    <!-- Deep search -->
+    <color name="re_search">#992E2E2E</color>
+
+    <color name="notification">#2986FF</color>
+    <color name="progress">#2E2E2E</color>
+    <color name="over_video_surface01">#99333333</color>
+    <color name="user_info_background">#60DAE7</color>
+
+    <!-- debug log-->
+    <color name="debug01">#D9D9D9</color>
+    <color name="debug02">#FFFFFF</color>
+
+    <color name="gradient_xpro_default01">#02CFFE</color>
+    <color name="gradient_xpro_default02">#4550D7</color>
+    <color name="gradient_xpro_default03">#6F01BF</color>
+    <color name="gradient_xstd_default01">#C9D0E0</color>
+    <color name="gradient_xstd_default02">#98ABC8</color>
+    <color name="gradient_xstd_default03">#869EC2</color>
+    <color name="gradient_xstd_default04">#98ABC8</color>
+    <color name="gradient_xstd_default05">#C9D0E0</color>
+    <color name="gradient_xstd_bk_default01">#FFFFFF</color>
+    <color name="gradient_xstd_bk_default02">#E0E0E0</color>
+
+    <color name="danger_bk">#FFD4D4</color>
+</resources>

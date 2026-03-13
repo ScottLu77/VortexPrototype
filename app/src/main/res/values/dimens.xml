@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_email_password_underline_height_on_focus">2dp</dimen>
+    <dimen name="login_email_password_underline_height_not_focus">1dp</dimen>
+    <dimen name="barcode_border_width">240dp</dimen>
+    <dimen name="barcode_border_height">240dp</dimen>
+    <dimen name="distance_between_calibration">48dp</dimen>
+    <dimen name="archive_hover_area_width">14dp</dimen>
+    <dimen name="unit_dp">1dp</dimen>
+    <dimen name="unit_sp">1sp</dimen>
+    <dimen name="illustration_padding">10dp</dimen>
+    <dimen name="archiving_files_button_default_padding">10dp</dimen>
+    <dimen name="archiving_files_button_archiving_padding">14dp</dimen>
+    <dimen name="archiving_animation_y_translate">10dp</dimen>
+    <dimen name="header_bar_height">57dp</dimen>
+    <dimen name="header_bar_landscape_height">38dp</dimen>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen.IconBackground">
+        <item name="windowSplashScreenBackground">@color/surface03</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo_product_vertical_android12</item>
+        <item name="windowSplashScreenAnimationDuration">5000</item>
+        <item name="postSplashScreenTheme">@style/Theme.AndroidCharmander</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/logo_company_android12</item>
+    </style>
+</resources>

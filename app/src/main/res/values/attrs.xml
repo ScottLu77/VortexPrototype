@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Custom">
+        <attr name="text" format="string" />
+        <attr name="hint" format="string" />
+        <attr name="desc" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ButtonSolidLargePrimary">
+        <attr name="normal_text" format="string" />
+        <attr name="loading_text" format="string" />
+        <attr name="disable_text" format="string" />
+        <attr name="normalBackground" format="reference|color" />
+        <attr name="loadingBackground" format="reference|color" />
+        <attr name="disableBackground" format="reference|color" />
+        <attr name="normalTextColor" format="color" />
+        <attr name="loadingTextColor" format="color" />
+        <attr name="disableTextColor" format="color" />
+        <attr name="showProgress" format="boolean" />
+        <attr name="disableInProgress" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="Joystick">
+        <attr name="land" format="boolean" />
+    </declare-styleable>
+
+</resources>
