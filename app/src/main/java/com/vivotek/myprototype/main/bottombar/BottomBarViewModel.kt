@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.derivedStateOf
-import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -31,9 +30,9 @@ class BottomBarViewModelFactory(
 class BottomBarViewModel(
     val application: Application,
     val initialTabId: Int?,
+    private val displayResolver: BottomTabDisplayResolver = BottomTabDisplayResolver()
 ) : ViewModel() {
     private val preference: PreferenceWrapper = PreferenceWrapper()
-    private val tabDisplayResolver = BottomTabDisplayResolver()
 
     val bottomTabs = mutableStateListOf<BottomTabItem>()
     var selectedTab: MutableState<BottomTabItem>
@@ -69,7 +68,7 @@ class BottomBarViewModel(
 
     private fun getAvailableTabs(): List<BottomTabItem> {
         val defaultList = listOf(View, CustomView, DeepSearch, Message, SearchLight, Archive, FloorPlan)
-        return tabDisplayResolver.visibleTabs(defaultList)
+        return displayResolver.visibleTabs(defaultList)
     }
 
 
@@ -77,12 +76,11 @@ class BottomBarViewModel(
         bottomTabs.map { tab ->
             BottomTabState(
                 tab = tab,
-                enabled = tabDisplayResolver.enabled(tab),
-                showBadge = tabDisplayResolver.showBadge(tab)
+                enabled = displayResolver.enabled(tab),
+                showBadge = displayResolver.showBadge(tab)
             )
         }
     }
-
 
     fun navigateTo(tab: BottomTabItem) {
         when (tab) {

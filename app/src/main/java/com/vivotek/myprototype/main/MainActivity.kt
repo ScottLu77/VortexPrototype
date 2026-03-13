@@ -13,6 +13,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -25,6 +26,11 @@ import com.vivotek.myprototype.main.bottombar.BottomBar
 import com.vivotek.myprototype.main.bottombar.BottomBarViewModel
 import com.vivotek.myprototype.main.bottombar.BottomBarViewModelFactory
 import com.vivotek.myprototype.main.bottombar.BottomTabItem
+import com.vivotek.myprototype.main.bottombar.MoreTabsMenu
+import com.vivotek.myprototype.main.headerbar.HeaderBar
+import com.vivotek.myprototype.manager.OrganizationInfoManager
+import com.vivotek.myprototype.uicomponent.common.PopupMenu
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,6 +72,12 @@ class MainActivity : AppCompatActivity() {
                 Scaffold(
                     scaffoldState = scaffoldState,
                     topBar = {
+                        HeaderBar(
+                            title = stringResource(selectedTab.title),
+                            orgName = OrganizationInfoManager.organizationName,
+                            buttons = emptyList(),
+                            onAvatarClick = { scope.launch { drawerState.open() } },
+                        )
                     },
                     bottomBar = {
                         BottomBar(
@@ -108,6 +120,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            PopupMenu(show = bottomBarViewModel.showBottomSheet) {
+                MoreTabsMenu(
+                    states = bottomTabStates,
+                    onTabClick = {
+                        bottomBarViewModel.closeMenu()
+                        bottomBarViewModel.navigateTo(it)
+                    },
+                    onReorderTabsClick = {
+                    }
+                )
+            }
         }
     }
 }
