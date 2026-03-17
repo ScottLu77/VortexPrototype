@@ -25,25 +25,15 @@ import com.vivotek.myprototype.common.AvatarHelper
 import com.vivotek.myprototype.uicomponent.font.H6
 import com.vivotek.myprototype.uicomponent.common.clickable2
 import com.vivotek.myprototype.uicomponent.common.Divider
-import com.vivotek.myprototype.main.view.ViewMode
-
-sealed class ActionButton {
-    data class News(val onClick: () -> Unit) : ActionButton()
-    data class Add(val onClick: () -> Unit) : ActionButton()
-    data class Search(val onClick: () -> Unit) : ActionButton()
-    data class Mode(val mode: ViewMode, val onClick: () -> Unit) : ActionButton()
-    data class Alarm(val onClick: () -> Unit) : ActionButton()
-    data class Snooze(val count: Int, val onClick: () -> Unit) : ActionButton()
-    data class Archiving(val onClick: () -> Unit) : ActionButton()
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HeaderBar(
     title: String,
     orgName: String,
-    buttons: List<ActionButton>,
+    iconStates: List<HeaderBarIconState>,
     onAvatarClick: () -> Unit,
+    onIconClick: (HeaderBarIcon) -> Unit,
     outdatedFirmwareBanner: (@Composable () -> Unit)? = null,
     licenseBanner: (@Composable () -> Unit)? = null,
 ) {
@@ -76,19 +66,18 @@ fun HeaderBar(
                 )
             },
             actions = {
-                buttons.forEach { button ->
-                    when (button) {
-                        is ActionButton.News -> ActionIcon(R.drawable.icon_status_notified, button.onClick, Color.Unspecified, "newsButton")
-                        is ActionButton.Search -> ActionIcon(R.drawable.icon_general_search_line, button.onClick, testTag = "searchButton")
-                        is ActionButton.Mode -> ActionIcon(
-                            if (button.mode == ViewMode.List) R.drawable.icon_general_grid_solid else R.drawable.icon_general_list_solid,
-                            button.onClick,
-                            testTag = "changeLayout"
+                iconStates.forEach { state ->
+                    when (state.icon) {
+                        HeaderBarIcon.Snooze -> SnoozeActionIcon(
+                            count = state.badgeCount,
+                            onClick = { onIconClick(state.icon) }
                         )
-                        is ActionButton.Alarm -> ActionIcon(R.drawable.icon_general_alarm_management_solid, button.onClick, testTag = "alarmSettingsButton")
-                        is ActionButton.Snooze -> SnoozeActionIcon(button.count, button.onClick)
-                        is ActionButton.Add -> ActionIcon(R.drawable.icon_general_plus_line, button.onClick, testTag = "addButton")
-                        is ActionButton.Archiving -> ActionIcon(R.drawable.icon_status_archiving_solid_normal_dark, button.onClick, Color.Unspecified, "archivingFilesButton")
+                        else -> ActionIcon(
+                            icon = state.resolvedIcon,
+                            onClick = { onIconClick(state.icon) },
+                            tint = state.tint ?: colorResource(R.color.icon03),
+                            testTag = state.icon.testTag,
+                        )
                     }
                 }
             },
