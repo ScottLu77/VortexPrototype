@@ -9,6 +9,7 @@ import androidx.compose.material.rememberScaffoldState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.rememberDrawerState
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
@@ -28,6 +29,8 @@ import com.vivotek.myprototype.main.bottombar.BottomBarViewModelFactory
 import com.vivotek.myprototype.main.bottombar.BottomTabItem
 import com.vivotek.myprototype.main.bottombar.MoreTabsMenu
 import com.vivotek.myprototype.main.headerbar.HeaderBar
+import com.vivotek.myprototype.main.headerbar.HeaderBarIcon
+import com.vivotek.myprototype.main.headerbar.HeaderBarViewModel
 import com.vivotek.myprototype.manager.OrganizationInfoManager
 import com.vivotek.myprototype.uicomponent.common.PopupMenu
 import kotlinx.coroutines.launch
@@ -36,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var bottomBarViewModel: BottomBarViewModel
+    private lateinit var headerBarViewModel: HeaderBarViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,6 +57,7 @@ class MainActivity : AppCompatActivity() {
         val factory = BottomBarViewModelFactory(application, initialTabId)
         bottomBarViewModel = ViewModelProvider(this, factory)[BottomBarViewModel::class.java]
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        headerBarViewModel = ViewModelProvider(this)[HeaderBarViewModel::class.java]
 
         setContent {
 
@@ -62,6 +67,11 @@ class MainActivity : AppCompatActivity() {
             val scope = rememberCoroutineScope()
             val selectedTab by bottomBarViewModel.selectedTab
             val bottomTabStates by bottomBarViewModel.bottomTabStates
+            val headerBarIconStates by headerBarViewModel.headerBarIconStates
+
+            LaunchedEffect(selectedTab) {
+                headerBarViewModel.updateTab(selectedTab)
+            }
 
 
             ModalNavigationDrawer(
@@ -75,8 +85,19 @@ class MainActivity : AppCompatActivity() {
                         HeaderBar(
                             title = stringResource(selectedTab.title),
                             orgName = OrganizationInfoManager.organizationName,
-                            buttons = emptyList(),
+                            iconStates = headerBarIconStates,
                             onAvatarClick = { scope.launch { drawerState.open() } },
+                            onIconClick = { icon ->
+                                when (icon) {
+                                    HeaderBarIcon.News -> headerBarViewModel.popupMenu()
+                                    HeaderBarIcon.Search -> {}
+                                    HeaderBarIcon.Mode -> {}
+                                    HeaderBarIcon.Alarm -> {}
+                                    HeaderBarIcon.Snooze -> {}
+                                    HeaderBarIcon.Add -> {}
+                                    HeaderBarIcon.Archiving -> {}
+                                }
+                            },
                         )
                     },
                     bottomBar = {
